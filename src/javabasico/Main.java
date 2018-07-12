@@ -35,14 +35,16 @@ public class Main {
         try {
             for (int i = 1; i <= 10; i++) {
 
-               objListaSimple.insertar(Integer.toString(i));
-               objListaSimple.insertar(i);
+                objListaSimple.insertar(Integer.toString(i));
+
             }
-            
-        }
-        catch(Exception ex)
-        {
-             System.out.println(ex.toString());
+            for (int j = 1; j <= 10; j++) {
+                System.out.println("--- Lanzar Excepcion---");
+                objListaSimple.insertar(j);
+                System.out.println("--- Fin Excepcion ---");
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.toString());
         }
 
     }
@@ -54,10 +56,21 @@ public class Main {
     }
 
     public void insertarListaArray() {
-        for (int i = 1; i <= 10; i++) {
-            objListaArray.insertarNuevoElemento(Integer.toString(i));
-            System.out.println("Tamaño :" + objListaArray.getLongitud() + " En la posicion: " + i);
+        try {
+            for (int i = 1; i <= 10; i++) {
+                objListaArray.insertarNuevoElemento(Integer.toString(i));
+
+                System.out.println("Tamaño :" + objListaArray.getLongitud() + " En la posicion: " + i);
+            }
+            for (int j = 1; j <= 10; j++) {
+                System.out.println("--- Lanzar Excepcion---");
+                objListaArray.insertarNuevoElemento(j);
+                System.out.println("--- Fin Excepcion---");
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.toString());
         }
+
     }
 
     public void imprimirListaArray() {

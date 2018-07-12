@@ -34,8 +34,9 @@ public class ListaArray {
     
     // <editor-fold defaultstate="collapsed" desc="Metodos">
 
-    public void insertarNuevoElemento(Object objeto) {
+    public void insertarNuevoElemento(Object objeto) throws ExcepcionClase{
 
+          if (objeto instanceof String) {
         if ((posicion) == (this.longitud / INCREMENTO)) {
 
             this.valores = Arrays.copyOf(valores, this.longitud * INCREMENTO);
@@ -45,6 +46,11 @@ public class ListaArray {
         this.valores[this.posicion] = objeto;
 
         this.posicion++;
+          }
+          else
+          {
+              throw new ExcepcionClase("No es del tipo String");
+          }
     }
 
     public void mostrarElementos() {
