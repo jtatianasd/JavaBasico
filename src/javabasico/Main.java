@@ -31,9 +31,20 @@ public class Main {
     }
 
     public void insertarListaSimple() {
-        for (int i = 1; i <= 10; i++) {
-            objListaSimple.insertar(Integer.toString(i));
+
+        try {
+            for (int i = 1; i <= 10; i++) {
+
+               objListaSimple.insertar(Integer.toString(i));
+               objListaSimple.insertar(i);
+            }
+            
         }
+        catch(Exception ex)
+        {
+             System.out.println(ex.toString());
+        }
+
     }
 
     public void imprimirListaSimple() {
@@ -45,15 +56,15 @@ public class Main {
     public void insertarListaArray() {
         for (int i = 1; i <= 10; i++) {
             objListaArray.insertarNuevoElemento(Integer.toString(i));
-             System.out.println("Tamaño :" + objListaArray.getLongitud() + " En la posicion: "+ i);
+            System.out.println("Tamaño :" + objListaArray.getLongitud() + " En la posicion: " + i);
         }
     }
-    public void imprimirListaArray()
-    {
+
+    public void imprimirListaArray() {
         objListaArray.mostrarElementos();
     }
 
     public void imprimirLongitudArray() {
-        System.out.println("\n"+ "Tamaño :" + objListaArray.getLongitud());
+        System.out.println("\n" + "Tamaño :" + objListaArray.getLongitud());
     }
 }

@@ -39,12 +39,20 @@ public class ListaSimple {
         this.nodo_Actual = null;
         this.root = null;
     }
+
     //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Metodos">
-    public void insertar(Object dato) {
-        Node temporal = new Node(dato, null);
-        temporal.setSiguiente(nodo_Actual);
-        nodo_Actual = temporal;
+    public void insertar(Object dato) throws ExcepcionClase {
+
+        if (dato instanceof String) {
+            Node temporal = new Node(dato, null);
+            temporal.setSiguiente(nodo_Actual);
+            nodo_Actual = temporal;
+        }
+        else
+        {
+         throw new ExcepcionClase("No es del tipo String");
+        }
     }
 
     public void imprimir(int n) {
@@ -58,7 +66,7 @@ public class ListaSimple {
                     return;
                 }
             }
-            System.out.print(temporal.getValor() + " "+"\n");
+            System.out.print(temporal.getValor() + " " + "\n");
         } else {
             root = nodo_Actual;
         }
