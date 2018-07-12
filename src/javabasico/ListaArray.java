@@ -5,16 +5,17 @@
  */
 package javabasico;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 /**
  *
  * @author jtati
  */
-public class ListaArray {
+public class ListaArray<T> {
 
-    // <editor-fold defaultstate="collapsed" desc="Atributos">
-    private Object[] valores;
+
+    private T[] valores;
     private int longitud = 2;
     private int posicion;
     private final static int INCREMENTO = 2;
@@ -23,18 +24,26 @@ public class ListaArray {
     public int getLongitud() {
         return longitud;
     }
+        public T[] getValores() {
+        return valores;
+    }
+
+    // <editor-fold defaultstate="collapsed" desc="Atributos">
+    public void setValores(T[] valores) {
+        this.valores = valores;
+    }
     //</editor-fold>
     
     // <editor-fold defaultstate="collapsed" desc="Constructor">
     public ListaArray() {
-        this.valores = new Object[this.longitud];
+        this.valores = (T[])new Object[this.longitud];
         this.posicion = 0;
     }
     //</editor-fold>
     
     // <editor-fold defaultstate="collapsed" desc="Metodos">
 
-    public void insertarNuevoElemento(Object objeto) {
+    public void insertarNuevoElemento(T objeto) {
 
         if ((posicion) == (this.longitud / INCREMENTO)) {
 

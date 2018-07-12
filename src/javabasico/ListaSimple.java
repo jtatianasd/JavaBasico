@@ -9,7 +9,7 @@ package javabasico;
  *
  * @author jtati
  */
-public class ListaSimple {
+public class ListaSimple<T> {
 
     // <editor-fold defaultstate="collapsed" desc="Atributos">
     protected Node root;
@@ -41,7 +41,7 @@ public class ListaSimple {
     }
     //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Metodos">
-    public void insertar(Object dato) {
+    public void insertar(T dato) {
         Node temporal = new Node(dato, null);
         temporal.setSiguiente(nodo_Actual);
         nodo_Actual = temporal;
