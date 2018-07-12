@@ -45,14 +45,15 @@ public class Main {
     public void insertarListaArray() {
         for (int i = 1; i <= 10; i++) {
             objListaArray.insertarNuevoElemento(Integer.toString(i));
+             System.out.println("Tamaño :" + objListaArray.getLongitud() + " En la posicion: "+ i);
         }
     }
     public void imprimirListaArray()
     {
-        objListaArray.mostrarElementos();;
+        objListaArray.mostrarElementos();
     }
 
     public void imprimirLongitudArray() {
-        System.out.println("Tamaño :" + objListaArray.getLongitud());
+        System.out.println("\n"+ "Tamaño :" + objListaArray.getLongitud());
     }
 }

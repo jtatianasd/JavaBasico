@@ -50,7 +50,7 @@ public class ListaArray {
     public void mostrarElementos() {
 
         for (int i = 0; i < this.posicion; i++) {
-            System.out.println(this.valores[i].toString());
+            System.out.println("Elemento insertado: "+ this.valores[i].toString() + " ");
         }
 
     }
