@@ -12,7 +12,7 @@ package javabasico;
 public class Main {
 
     ListaSimple objListaSimple = new ListaSimple();
-    ListaArray objListaArray = new ListaArray();
+    ListaArray<String> objListaArray = new ListaArray();
 
     /**
      * @param args the command line arguments
@@ -25,7 +25,8 @@ public class Main {
         System.out.println("----------- Array ----------");
 
         objMain.insertarListaArray();
-        objMain.imprimirListaArray();
+       
+  
         objMain.imprimirLongitudArray();
 
     }
@@ -43,15 +44,21 @@ public class Main {
     }
 
     public void insertarListaArray() {
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= 20; i++) {
             objListaArray.insertarNuevoElemento(Integer.toString(i));
              System.out.println("Tamaño :" + objListaArray.getLongitud() + " En la posicion: "+ i);
+             
         }
+              for (String valor : objListaArray) {
+               if(valor != null)
+               {
+                   System.out.println("Iterator: " + valor);
+               }
+                  
+
+            }
     }
-    public void imprimirListaArray()
-    {
-        objListaArray.mostrarElementos();
-    }
+    
 
     public void imprimirLongitudArray() {
         System.out.println("\n"+ "Tamaño :" + objListaArray.getLongitud());
